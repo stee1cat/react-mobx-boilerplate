@@ -1,0 +1,24 @@
+{
+  "name": "react-mobx-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stee1cat/react-mobx-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "mobx",
+    "boilerplate"
+  ],
+  "author": "Gennadiy Khatuntsev <e.steelcat@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stee1cat/react-mobx-boilerplate/issues"
+  },
+  "homepage": "https://github.com/stee1cat/react-mobx-boilerplate#readme"
+}
