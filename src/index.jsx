@@ -1,9 +1,19 @@
-export class TestClass {
+import React from 'react';
+import { render } from 'react-dom';
+import { Router } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-    constructor() {
-        console.log('its works!');
-    }
+import App from './components/App';
 
+function renderApp(Component) {
+    const browserHistory = createBrowserHistory();
+
+    render(
+        <Router history={browserHistory}>
+            <Component/>
+        </Router>,
+        document.getElementById('root')
+    );
 }
 
-new TestClass();
+renderApp(App);

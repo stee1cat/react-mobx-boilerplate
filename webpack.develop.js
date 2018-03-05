@@ -1,10 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, 'src'),
     resolve: {
-        extensions: ['.js', 'jsx']
+        extensions: ['.js', '.jsx']
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -13,18 +14,20 @@ module.exports = {
         chunkFilename: '[name].[chunkhash:8].js'
     },
     entry: [
+        'babel-polyfill',
         './index.jsx'
     ],
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 include: path.join(__dirname, 'src'),
                 loader: 'babel-loader'
             }
         ]
     },
     devServer: {
+        hot: true,
         open: true,
         contentBase: path.resolve(__dirname, 'dist'),
         port: process.env.PORT || 1337,
@@ -34,6 +37,9 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
-        new HtmlWebpackPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: '../index.html'
+        })
     ]
 };
