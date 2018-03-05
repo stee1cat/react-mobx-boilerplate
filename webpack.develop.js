@@ -23,6 +23,17 @@ module.exports = {
                 test: /\.jsx?$/,
                 include: path.join(__dirname, 'src'),
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: ['style-loader', {
+                    loader: 'css-loader',
+                    options: {
+                        minimize: false,
+                        url: false
+                    }
+                }, 'sass-loader']
             }
         ]
     },
