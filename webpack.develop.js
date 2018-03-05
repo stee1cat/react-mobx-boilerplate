@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     context: path.join(__dirname, 'src'),
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js', 'jsx']
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -13,12 +13,21 @@ module.exports = {
         chunkFilename: '[name].[chunkhash:8].js'
     },
     entry: [
-        './index.js'
+        './index.jsx'
     ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                include: path.join(__dirname, 'src'),
+                loader: 'babel-loader'
+            }
+        ]
+    },
     devServer: {
+        open: true,
         contentBase: path.resolve(__dirname, 'dist'),
         port: process.env.PORT || 1337,
-        host: '0.0.0.0',
         publicPath: '/',
         historyApiFallback: true,
         disableHostCheck: true
