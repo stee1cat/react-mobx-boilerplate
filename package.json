@@ -46,6 +46,9 @@
   },
   "dependencies": {
     "history": "^4.7.2",
+    "mobx": "^3.6.1",
+    "mobx-react": "^4.4.2",
+    "mobx-react-router": "^4.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2"
