@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].[hash:8].js',
-        publicPath: '/',
+        publicPath: './',
         chunkFilename: '[name].[chunkhash:8].js'
     },
     entry: {

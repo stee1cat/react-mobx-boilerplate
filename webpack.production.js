@@ -4,8 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const common = require('./webpack.common');
 
+console.log(process.env.NODE_ENV);
+
 module.exports = merge(common, {
-    mode: process.env.NODE_ENV,
+    mode: 'production',
     devtool: false,
     module: {
         rules: [

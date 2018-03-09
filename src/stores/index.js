@@ -1,5 +1,7 @@
+import AccountStore from './AccountStore';
 import AppStore from './AppStore';
 
 export default {
-    appStore: new AppStore()
+    appStore: new AppStore(),
+    accountStore: new AccountStore()
 };
