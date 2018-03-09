@@ -1,12 +1,12 @@
 import { inject, observer } from 'mobx-react';
 import React, { Component } from 'react';
 
-@inject('store')
+@inject('stores')
 @observer
 export default class App extends Component {
 
     render() {
-        let { appStore } = this.props.store;
+        let { appStore } = this.props.stores;
 
         return (
             <div className="app">

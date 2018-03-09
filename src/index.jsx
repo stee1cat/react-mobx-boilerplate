@@ -13,7 +13,7 @@ function renderApp(Component) {
 
     render(
         <Router history={browserHistory}>
-            <Provider store={stores}>
+            <Provider stores={stores}>
                 <Component/>
             </Provider>
         </Router>,
