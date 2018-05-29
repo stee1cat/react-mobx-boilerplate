@@ -31,6 +31,6 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('[name].[contenthash:8].css')
+        new ExtractTextPlugin('[name].[hash:8].css')
     ]
 });
